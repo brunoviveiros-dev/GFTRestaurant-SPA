@@ -1,0 +1,17 @@
+<div>
+    <input type="text" #clearInput  [(ngModel)]="inputTextOrder" placeholder="Input your order ...">
+    <button class="btn btn-success" (click)="postOrder()">Submit</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Orders</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+        <th scope="row">{{order.detail}}</th>
+        </tr>
+    </tbody>
+</table>
