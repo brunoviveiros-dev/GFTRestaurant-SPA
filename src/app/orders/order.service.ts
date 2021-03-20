@@ -20,7 +20,7 @@ export class OrderService {
 
   public postOrder(inputOrder: string): Observable<Order>{
     return this.http.post<Order>(`${this.baseUrl}`, {
-      orderDescription: inputOrder
+      detail: inputOrder
     });
   }
 

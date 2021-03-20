@@ -1,12 +1,12 @@
 <div>
-    <input type="text" #clearInput  [(ngModel)]="inputTextOrder" placeholder="Input your order ...">
+    <input type="text" #clearInput  [(ngModel)]="inputTextOrder" placeholder="Input your order ..." style="margin:5px; width:710px;">
     <button class="btn btn-success" (click)="postOrder()">Submit</button>
 </div>
-
-<table class="table table-striped">
+<br>
+<table class="table table-striped table-sm" style="width:800px">
     <thead>
         <tr>
-        <th scope="col">Orders</th>
+        <th scope="col" style="background-color: darkblue; color: white;">Orders</th>
         </tr>
     </thead>
     <tbody>
