@@ -1,17 +1,27 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    All orders have been successfully removed.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <div>
-    <input type="text" #clearInput  [(ngModel)]="inputTextOrder" placeholder="Input your order ..." style="margin:5px; width:710px;">
-    <button class="btn btn-success" (click)="postOrder()">Submit</button>
+    <h3>Input your order</h3>
+    <input type="text" #clearInput  [(ngModel)]="inputTextOrder" placeholder="Ex: morning,1,2,3" (keyup.enter)="postOrder()" style="margin:5px; width:556px;">
+    <button class="btn btn-primary" (click)="postOrder()" style="margin: 5px;">Submit</button>
+    <button class="btn btn-danger" (click)="deleteAllOrders()">Delete All Orders</button>
 </div>
 <br>
 <table class="table table-striped table-sm" style="width:800px">
     <thead>
         <tr>
-        <th scope="col" style="background-color: darkblue; color: white;">Orders</th>
+            <th scope="col" style="background-color: darkblue; color: white;">#</th>
+            <th scope="col" style="background-color: darkblue; color: white;">Orders</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let order of orders">
-        <th scope="row">{{order.detail}}</th>
+        <th scope="row">{{order.id}}</th>
+        <td> {{order.detail}} </td>
         </tr>
     </tbody>
 </table>

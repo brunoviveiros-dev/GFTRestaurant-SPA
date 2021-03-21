@@ -14,7 +14,7 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllOrders(): Observable<Order[]> {
+  public getAllOrders(): Observable<Order[]>{
     return this.http.get<Order[]>(`${this.baseUrl}`);
   }
 
@@ -22,6 +22,10 @@ export class OrderService {
     return this.http.post<Order>(`${this.baseUrl}`, {
       detail: inputOrder
     });
+  }
+
+  public deleteAllOrders(): Observable<Order> {
+    return this.http.delete<Order>(`${this.baseUrl}`);
   }
 
 }

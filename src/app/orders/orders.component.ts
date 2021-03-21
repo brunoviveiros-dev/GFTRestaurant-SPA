@@ -12,6 +12,7 @@ export class OrdersComponent implements OnInit {
   public orders!: Order[];
   @ViewChild('clearInput') clearInput : any;
   inputTextOrder!: string;
+  alert: boolean = false;
 
   constructor(private orderService: OrderService) {
   }
@@ -37,6 +38,19 @@ export class OrdersComponent implements OnInit {
         this.orders.push(order);
       });
     this.clearInput.nativeElement.value = '';
+    this.inputTextOrder = '';
+  }
+
+  deleteAllOrders(){
+    if(confirm("Are you sure to delete all orders?")) {
+      this.orderService.deleteAllOrders().subscribe();
+      this.orders = [];
+      this.alert = true;
+    }
+  }
+
+  closeAlert(){
+    this.alert = false;
   }
 
 }
