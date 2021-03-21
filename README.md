@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/81095417/111913662-ebe99200-8a4d-11eb-9cd3-acf747c001a4.png)
+
+
 # GFTRestaurantSPA
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
